@@ -324,7 +324,7 @@ class MediaGalleryViewController: UINavigationController, MediaGalleryDataSource
         detailView.backgroundColor = .clear
         self.view.backgroundColor = .clear
 
-        self.presentationView.layer.cornerRadius = OWSMessageCellCornerRadius
+        self.presentationView.layer.cornerRadius = kOWSMessageCellCornerRadius
 
         fromViewController.present(self, animated: false) {
 
@@ -467,7 +467,7 @@ class MediaGalleryViewController: UINavigationController, MediaGalleryDataSource
         if isAnimated {
             UIView.animate(withDuration: changedItems ? 0.25 : 0.18,
                            delay: 0.0,
-                           options:.curveEaseOut,
+                           options: .curveEaseOut,
                            animations: {
                             // Move back over it's original location
                             self.presentationView.superview?.layoutIfNeeded()
@@ -477,7 +477,7 @@ class MediaGalleryViewController: UINavigationController, MediaGalleryDataSource
                             if changedItems {
                                 self.presentationView.alpha = 0
                             } else {
-                                self.presentationView.layer.cornerRadius = OWSMessageCellCornerRadius
+                                self.presentationView.layer.cornerRadius = kOWSMessageCellCornerRadius
                             }
             },
                            completion: { (_: Bool) in
@@ -535,8 +535,8 @@ class MediaGalleryViewController: UINavigationController, MediaGalleryDataSource
 
         self.presentationViewConstraints += self.presentationView.autoSetDimensions(to: convertedRect.size)
         self.presentationViewConstraints += [
-            self.presentationView.autoPinEdge(toSuperviewEdge: .top, withInset:convertedRect.origin.y),
-            self.presentationView.autoPinEdge(toSuperviewEdge: .left, withInset:convertedRect.origin.x)
+            self.presentationView.autoPinEdge(toSuperviewEdge: .top, withInset: convertedRect.origin.y),
+            self.presentationView.autoPinEdge(toSuperviewEdge: .left, withInset: convertedRect.origin.x)
         ]
     }
 
